@@ -4,9 +4,9 @@ import com.company.exceptions.IncorrectShapeException;
 
 public class Triangle extends Shape {
 
-    private double a;
-    private double b;
-    private double c;
+    private final double a;
+    private final double b;
+    private final double c;
 
     public Triangle(String shapeColor, double a, double b, double c) throws IncorrectShapeException {
         super(shapeColor);

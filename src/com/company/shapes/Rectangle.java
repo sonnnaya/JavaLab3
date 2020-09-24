@@ -4,12 +4,11 @@ import com.company.exceptions.IncorrectShapeException;
 
 public class Rectangle extends Shape {
 
-    private double a;
-    private double b;
+    private final double a;
+    private final double b;
 
     public Rectangle(String shapeColor, double a, double b) throws IncorrectShapeException {
         super(shapeColor);
-
         if (a <= 0 || b <= 0)
             throw new IncorrectShapeException();
         else {

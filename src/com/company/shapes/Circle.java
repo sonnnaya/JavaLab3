@@ -4,7 +4,7 @@ import com.company.exceptions.IncorrectShapeException;
 
 public class Circle extends Shape {
 
-    private double radius;
+    private final double radius;
 
     public Circle(String shapeColor, double radius) throws IncorrectShapeException {
         super(shapeColor);

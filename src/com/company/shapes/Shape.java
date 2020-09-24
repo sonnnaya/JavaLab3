@@ -5,6 +5,7 @@ import com.company.interfaces.Drawable;
 public abstract class Shape implements Drawable {
 
     private String shapeColor;
+
     public Shape(String shapeColor) {
         if (shapeColor == null)
             throw new IllegalArgumentException();
