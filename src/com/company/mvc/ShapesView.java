@@ -10,6 +10,8 @@ public class ShapesView {
     public final String SHAPES_SUM_ARES = "All areas sum is ";
     public final String CERTAIN_SHAPE_SUM_ARES = "s' areas sum is ";
     public final String SHAPES_SORTED_BY = "Shapes sorted by ";
+    public final String SAVED_TO_FILE = "Shapes were serialized into ";
+    public final String SAVED_FROM_FILE = "Saved shapes from file ";
 
     public void printInstances(String message, ArrayList<Shape> shapes)
     {
@@ -23,5 +25,9 @@ public class ShapesView {
 
     public void printMessageAndResult(String message, double result) {
         System.out.println("\n" + message + String.format("%.2f", result));
+    }
+
+    public void printMessage(String message) {
+        System.out.println(message);
     }
 }

@@ -1,6 +1,10 @@
 package com.company.mvc;
 
+import com.company.FileOfObjects;
 import com.company.enums.ShapeSortTypes;
+import com.company.shapes.Shape;
+
+import java.io.IOException;
 
 public class ShapesController {
 
@@ -34,6 +38,18 @@ public class ShapesController {
             default -> throw new NullPointerException();
         }
         shapesView.printInstances(message, shapesModel.getShapes());
+    }
+
+    public void saveToFile(String name) throws IOException {
+        var saver = new FileOfObjects<Shape>(name);
+        saver.write(shapesModel.getShapes());
+        shapesView.printMessage(shapesView.SAVED_TO_FILE + name);
+    }
+
+    public void saveFromFile(String name) throws IOException, ClassNotFoundException {
+        var saver = new FileOfObjects<Shape>(name);
+        var shapes = saver.read();
+        shapesView.printInstances(shapesView.SAVED_FROM_FILE + name + ":", shapes);
     }
 }
 

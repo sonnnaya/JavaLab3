@@ -2,7 +2,9 @@ package com.company.shapes;
 
 import com.company.interfaces.Drawable;
 
-public abstract class Shape implements Drawable {
+import java.io.Serializable;
+
+public abstract class Shape implements Drawable, Serializable {
 
     private String shapeColor;
 

@@ -9,9 +9,11 @@ import com.company.mvc.ShapesController;
 import com.company.mvc.ShapesModel;
 import com.company.mvc.ShapesView;
 
+import java.io.IOException;
+
 public class Main {
 
-    public static void main(String[] args) throws IncorrectShapeException {
+    public static void main(String[] args) throws IncorrectShapeException, IOException, ClassNotFoundException {
         ShapesModel shapesModel = new ShapesModel(new Circle("red", 2.4),
                                                   new Rectangle("blue", 15, 2),
                                                   new Triangle("yellow", 3, 4,5),
@@ -28,13 +30,9 @@ public class Main {
         ShapesView shapesView = new ShapesView();
         ShapesController shapesController = new ShapesController(shapesModel, shapesView);
 
-        shapesController.shapes();
-        shapesController.calcAreasSum();
-        shapesController.calcAreasSum(Rectangle.class);
-        shapesController.calcAreasSum(Triangle.class);
-        shapesController.calcAreasSum(Circle.class);
 
-        shapesController.sort(ShapeSortTypes.AREA);
-        shapesController.sort(ShapeSortTypes.COLOR);
+        String fileName = "myObjects.ser";
+        shapesController.saveToFile(fileName);
+        shapesController.saveFromFile(fileName);
     }
 }
